@@ -19,19 +19,22 @@ end
 
 player_cards = []
 deck.keys.each do |suit|
-  deck[suit] = cards
-  cards.shuffle!
-  player_cards << cards.pop
+  dup_cards = deck[suit].clone
+  dup_cards.shuffle!
+  player_cards << dup_cards.pop
+  deck[suit] = dup_cards
+
 end
 
 # Determine the score of the remaining cards in the deck
 
 sum = deck.reduce(0) do |sum, (_, remaining_cards)|
-  remaining_cards.map! do |card|
+  mapped_values = remaining_cards.map do |card|
     score(card)
   end
 
-  sum += remaining_cards.sum
+  sum += mapped_values.sum
 end
 
 puts sum
+puts player_cards

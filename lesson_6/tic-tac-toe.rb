@@ -263,7 +263,6 @@ puts "thank you for playing tic tac toe!"
 #   end
 # end
 
-
 # def player_first_game(available_moves_array, random_moves_array, chosen_moves_array, chosen_player_moves_array)
 #   puts "Player moving first"
 #   loop do

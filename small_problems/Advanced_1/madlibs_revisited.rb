@@ -7,8 +7,10 @@ adjective = ADJECTIVES.sample
 noun = NOUNS.sample
 verb = VERBS.sample
 adverb = ADVERBS.sample
-a = ""
-a << File.open("madlibs.txt").gets
-p a.delete("'\''")
-puts "#{adjective}"
-
+# a = ""
+# a << File.open("madlibs.txt").gets
+# p a.delete("")
+# puts "#{adjective}"
+a = "potatoooo"
+text = File.read('madlibs.txt') 
+puts text % a
